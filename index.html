@@ -26,22 +26,6 @@
 </head>
 <body>
 
-    <div id="full-nav-menu" class="fixed inset-0 z-50 bg-[#030008]/95 backdrop-blur-md flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
-        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white/50 hover:text-white transition p-2">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        <div class="space-y-6 text-center w-full max-w-[250px]">
-            <button onclick="navTo('screen-1')" class="w-full text-2xl font-bold text-white py-4 border-b border-white/10 hover:text-[#8b5cf6] transition">Home</button>
-            <button onclick="navTo('screen-3')" class="w-full text-2xl font-bold text-white py-4 border-b border-white/10 hover:text-[#8b5cf6] transition">Help / FAQ</button>
-        </div>
-    </div>
-
-    <div class="fixed top-5 right-5 z-40">
-        <button onclick="toggleMenu()" class="text-white drop-shadow-lg opacity-80 hover:opacity-100 transition p-2 focus:outline-none">
-            <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-    </div>
-
     <div id="dynamic-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0">
         <div class="bg-[#0a001a] border border-[#3b0086] rounded-2xl p-6 w-[90%] max-w-[380px] text-center shadow-[0_10px_40px_rgba(59,0,134,0.6)] transform scale-95 transition-transform duration-300" id="dynamic-modal-box">
             
@@ -116,65 +100,9 @@
                 </button>
             </div>
         </div>
-
-        <div id="screen-3" class="app-screen hidden" style="padding-top: 40px;">
-            <h2 class="text-3xl font-extrabold mb-2 text-center text-white drop-shadow-md md:text-4xl">Help & FAQ</h2>
-            <p class="text-gray-400 font-medium text-sm text-center mb-8 md:text-base">Have questions or issues?</p>
-            
-            <div class="space-y-0 text-left">
-                <div class="bg-[#3b0086]/30 border border-[#8b5cf6]/50 text-blue-100 text-[13px] font-medium p-4 rounded-xl mb-6 shadow-lg shadow-[#3b0086]/20 md:text-[15px] md:p-5">
-                    Our site is funded by our partners. By completing their sponsored quests, you help us afford to give free rewards to everyone!
-                </div>
-
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>How do I use this?</span></div>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <p class="faq-answer">Select a reward, enter your Roblox username, and complete one of the sponsored quests.</p>
-                </div>
-                
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg><span>How do I receive my prize?</span></div>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <p class="faq-answer">Your prize is delivered directly to your connected account or via a Roblox giftcard upon verification.</p>
-                </div>
-                
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><span>What if I can't complete a quest?</span></div>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <p class="faq-answer">If you're having trouble, please disable your AdBlocker. If that doesn't help, try another quest, or try on another device (phone/tablet/PC).</p>
-                </div>
-                
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg><span>Can I claim more than once?</span></div>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <p class="faq-answer">Yes, you can claim as many times as you want! Keep in mind a quest might not work again if you've already done it.</p>
-                </div>
-                
-                <div class="faq-item" onclick="toggleFaq(this)">
-                    <div class="faq-question">
-                        <div class="flex items-center gap-2"><svg class="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg><span>Is this an official Roblox website?</span></div>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <p class="faq-answer">No - we are not affiliated with or sponsored by Roblox. We are an independent group of developers working to make players happy!</p>
-                </div>
-            </div>
-
-            <button onclick="navTo('screen-1')" class="btn-redeem mt-8 w-full flex gap-2 shadow-[0_4px_15px_rgba(59,0,134,0.5)]">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg> Back to Home
-            </button>
-        </div>
-
     </div>
 
     <script src="index.js"></script>
 </body>
-</html>
-
+                                             </html>
+    
