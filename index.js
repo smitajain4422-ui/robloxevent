@@ -19,18 +19,6 @@ const urgencyInterval = setInterval(() => {
     }
 }, 3000); 
 
-// --- FULL SCREEN NAVIGATION MENU LOGIC ---
-function toggleMenu() {
-    const menu = document.getElementById('full-nav-menu');
-    if(menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        setTimeout(() => menu.classList.remove('opacity-0'), 10);
-    } else {
-        menu.classList.add('opacity-0');
-        setTimeout(() => menu.classList.add('hidden'), 300);
-    }
-}
-
 // --- NAVIGATION LOGIC ---
 function navTo(screenId) {
     document.querySelectorAll('.app-screen').forEach(el => {
@@ -41,28 +29,11 @@ function navTo(screenId) {
     const target = document.getElementById(screenId);
     target.classList.remove('hidden');
     target.classList.add('block', screenId === 'screen-1' ? 'fade-in' : 'slide-up');
-    
-    // Close menu if open
-    const menu = document.getElementById('full-nav-menu');
-    if(!menu.classList.contains('hidden')) toggleMenu();
 
     // Reset button state if returning home
     if(screenId === 'screen-1') {
         document.getElementById('btn-text').style.display = 'block';
         document.getElementById('btn-loader').style.display = 'none';
-    }
-}
-
-// --- FAQ ACCORDION LOGIC (Exclusive Toggle) ---
-function toggleFaq(element) {
-    const isActive = element.classList.contains('active');
-    
-    document.querySelectorAll('.faq-item').forEach(el => {
-        el.classList.remove('active');
-    });
-
-    if (!isActive) {
-        element.classList.add('active');
     }
 }
 
@@ -158,5 +129,5 @@ function fetchTasks() {
     }).fail(function() {
         $("#offers-container").html('<p class="text-sm font-bold text-red-500 py-4">Network error loading tasks. Please refresh.</p>');
     });
-}
-
+        }
+    
